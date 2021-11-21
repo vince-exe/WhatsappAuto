@@ -1,6 +1,8 @@
 import tkinter.messagebox as tk_msg
 import tkinter as tk
 
+import pywhatkit.core.exceptions
+
 from message import Message
 
 
@@ -61,3 +63,10 @@ def check_exceptions(message):
         message.send_message()
     except ValueError:
         tk_msg.showerror(title='Time Error', message='Invalid time format!')
+
+    except pywhatkit.core.exceptions.CallTimeException:
+        tk_msg.showerror(title='Time Error',
+                         message='Enter a longer time, because whatsapp takes a few seconds to open')
+
+    except pywhatkit.core.exceptions.InternetException:
+        tk_msg.showerror(title='Internet Error', message='You must be connected to the internet to send messages')
