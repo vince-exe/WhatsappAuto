@@ -19,7 +19,7 @@ def main_gui():
               text='Chat',
               activeforeground='#ffffff',
               foreground='#ffffff',
-              command=window.chat,
+              command=lambda: chat_gui(window),
               highlightbackground='#0c2d63',
               borderwidth=9,
               padx=50).place(x=190, y=220)
@@ -48,7 +48,9 @@ def main_gui():
     window.mainloop()
 
 
-def chat_gui():
+def chat_gui(window):
+    window.destroy()
+
     chat_window = Gui('1360x700', False, False, '#011638')
     mode = tk.StringVar()
     mode.set('')

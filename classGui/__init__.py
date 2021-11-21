@@ -9,7 +9,7 @@ class Gui:
         self.window.resizable(res_w, res_h)
         self.window.configure(background=background)
 
-    def chat(self):
+    def destroy(self):
         self.window.destroy()
 
     def mainloop(self):
