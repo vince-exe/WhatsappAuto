@@ -15,4 +15,3 @@ class Message:
             pywhatkit.sendwhatmsg(self.number, self.message, self.hours, self.minute)
         else:
             pywhatkit.sendwhatmsg_to_group(self.group_id, self.message, self.hours, self.minute)
-
